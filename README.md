@@ -1,3 +1,5 @@
+[![Package version](https://img.shields.io/npm/v/is-node-process.svg)](https://www.npmjs.com/package/is-node-process)
+
 # `is-node-process`
 
 Reliably determines if the code is running in Node.js
@@ -14,7 +16,9 @@ This library was created to provide a reliable way of determining a Node.js proc
 
 There are environments (i.e. JSDOM) that polyfill the global `window` object and some of its API for the sake of emulating browser-like behaviors, while still remaining a Node.js process.
 
-### Why relying on `global` is a bad idea
+### Why relying on `process` is a bad idea
+
+Electron injects a global `process` object in the browser runtime when run with the `nodeIntegration: true` option.
 
 ## Getting started
 
