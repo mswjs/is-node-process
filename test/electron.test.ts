@@ -1,25 +1,23 @@
 import * as path from 'path'
-import { Application } from 'spectron'
+import { ElectronApplication, Page, _electron as electron } from 'playwright'
 
 jest.setTimeout(10000)
 
-let app: Application
+let app: ElectronApplication
+let page: Page
 
 beforeAll(async () => {
-  app = new Application({
-    path: path.resolve(__dirname, '..', 'node_modules/.bin/electron'),
+  app = await electron.launch({
     args: [path.resolve(__dirname, 'fixtures/electron.js')],
   })
-  await app.start()
+  page = await app.firstWindow();
 })
 
 afterAll(async () => {
-  if (app.isRunning()) {
-    await app.stop()
-  }
+  await app.close()
 })
 
 it('returns false when run in the Electron renderer process', async () => {
-  const body = await app.client.$('body')
-  expect(await body.getText()).toEqual('false')
+  const body = await page.locator('body').textContent()
+  expect(body.trim()).toEqual('false')
 })

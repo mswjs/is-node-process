@@ -6,9 +6,19 @@ export function isNodeProcess(): boolean {
     return true
   }
 
-  return !!(
-    typeof process !== 'undefined' &&
-    process.versions &&
-    process.versions.node
-  )
+  if (typeof process !== 'undefined') {
+    // Electron (https://www.electronjs.org/docs/latest/api/process#processtype-readonly)
+    const type = (process as any).type
+    if (type === 'renderer' || type === 'worker') {
+      return false
+    }
+
+
+    return !!(
+      process.versions &&
+      process.versions.node
+    )
+  }
+
+  return false
 }
