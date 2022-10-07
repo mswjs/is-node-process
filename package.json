@@ -11,8 +11,7 @@
     "test": "jest",
     "test:react-native": "cd test/fixtures/react-native && yarn test",
     "build": "rollup -c rollup.config.ts",
-    "release": "release publish",
-    "prepublishOnly": "yarn build && yarn test"
+    "release": "release publish"
   },
   "files": [
     "lib"
