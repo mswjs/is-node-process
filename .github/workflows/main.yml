@@ -15,6 +15,10 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
 
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+
       - uses: actions/setup-node@v3
         with:
           always-auth: true
