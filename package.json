@@ -11,12 +11,14 @@
     "test": "jest",
     "test:react-native": "cd test/fixtures/react-native && yarn test",
     "build": "rollup -c rollup.config.ts",
+    "release": "release publish",
     "prepublishOnly": "yarn build && yarn test"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
+    "@ossjs/release": "^0.4.0",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@types/jest": "^26.0.24",
     "electron": "^13.1.7",
