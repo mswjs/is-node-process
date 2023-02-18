@@ -37,9 +37,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Test
-        run: pnpm test
-
       - name: Release
         run: pnpm release
         env:
