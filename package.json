@@ -9,14 +9,16 @@
     "browser": "open test/browser.html",
     "electron": "electron test/fixtures/electron.js",
     "test": "jest",
-    "test:react-native": "cd test/fixtures/react-native && yarn test",
+    "test:react-native": "cd test/fixtures/react-native && pnpm test",
     "build": "rollup -c rollup.config.ts",
-    "prepublishOnly": "yarn build && yarn test"
+    "release": "release publish",
+    "prepublishOnly": "pnpm build && pnpm test"
   },
   "files": [
     "lib"
   ],
   "devDependencies": {
+    "@ossjs/release": "^0.5.0",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@types/jest": "^26.0.24",
     "electron": "^19.0.6",
