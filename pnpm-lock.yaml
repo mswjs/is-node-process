@@ -4,6 +4,7 @@ specifiers:
   '@ossjs/release': ^0.5.0
   '@rollup/plugin-node-resolve': ^13.0.2
   '@types/jest': ^26.0.24
+  '@types/node': ^18.14.0
   electron: ^19.0.6
   jest: ^27.0.6
   playwright: ^1.22.2
@@ -16,6 +17,7 @@ devDependencies:
   '@ossjs/release': 0.5.0
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
   '@types/jest': 26.0.24
+  '@types/node': 18.14.0
   electron: 19.1.9
   jest: 27.5.1
   playwright: 1.30.0
@@ -807,7 +809,7 @@ packages:
   /@types/keyv/3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 16.18.12
+      '@types/node': 18.14.0
     dev: true
 
   /@types/minimist/1.2.2:
@@ -856,7 +858,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 16.18.12
+      '@types/node': 18.14.0
     dev: true
 
   /@types/semver/7.3.13:
