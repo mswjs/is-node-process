@@ -5,6 +5,10 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mswjs/is-node-process"
+  },
   "scripts": {
     "browser": "open test/browser.html",
     "electron": "electron test/fixtures/electron.js",
