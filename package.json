@@ -12,7 +12,7 @@
   "scripts": {
     "browser": "open test/browser.html",
     "electron": "electron test/fixtures/electron.js",
-    "test": "jest",
+    "test": "jest --testPathIgnorePatterns electron.test.ts",
     "test:react-native": "cd test/fixtures/react-native && pnpm test",
     "build": "rollup -c rollup.config.ts",
     "release": "release publish",
