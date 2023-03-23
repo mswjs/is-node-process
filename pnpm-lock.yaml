@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ossjs/release': ^0.5.0
+  '@ossjs/release': ^0.5.1
   '@rollup/plugin-node-resolve': ^13.0.2
   '@types/jest': ^26.0.24
   '@types/node': ^18.14.0
@@ -14,7 +14,7 @@ specifiers:
   typescript: ^4.3.5
 
 devDependencies:
-  '@ossjs/release': 0.5.0
+  '@ossjs/release': 0.5.1
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
   '@types/jest': 26.0.24
   '@types/node': 18.14.0
@@ -640,8 +640,8 @@ packages:
     resolution: {integrity: sha512-0zJhDjNR0aH1d68TiD6GnYr18dcuOiyTx8xV/I7fp9+z/VQ20e305aObW1/DO5/fiCOztscmvJsCjJDYDhFW6w==}
     dev: true
 
-  /@ossjs/release/0.5.0:
-    resolution: {integrity: sha512-mSMwa7bhUtWxpgGiImy1KqKig0PRgU+5/pojRJXqVSXcYLon+b17XB3YvoJARHQ+XIEnNTQgpn3TpLIjjhvTLg==}
+  /@ossjs/release/0.5.1:
+    resolution: {integrity: sha512-pp1VL1sOK7+E8rVRhnNvCcof0l8cN256dYLypLN0yOFqk9KxALZ9Rb5/Xft+PkHbsZyeca7SOEnuaWxAqJUt9g==}
     hasBin: true
     dependencies:
       '@open-draft/deferred-promise': 2.1.0
