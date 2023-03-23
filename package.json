@@ -24,7 +24,7 @@
     "test:react-native": "cd test/fixtures/react-native && pnpm test",
     "build": "tsup",
     "release": "release publish",
-    "prepublishOnly": "pnpm build && pnpm test"
+    "prepublishOnly": "pnpm build"
   },
   "files": [
     "lib"
