@@ -1,25 +1,42 @@
-import * as path from 'path'
-import { Application } from 'spectron'
+import { ElectronApplication, Page, _electron as electron } from 'playwright'
 
-jest.setTimeout(10000)
+jest.setTimeout(10_000)
 
-let app: Application
+let app: ElectronApplication | undefined
+let page: Page | undefined
 
 beforeAll(async () => {
-  app = new Application({
-    path: path.resolve(__dirname, '..', 'node_modules/.bin/electron'),
-    args: [path.resolve(__dirname, 'fixtures/electron.js')],
+  app = await electron
+    .launch({
+      args: [require.resolve('./fixtures/electron.js')],
+    })
+    .catch((error) => {
+      console.error('Failed to launch Electron app', error)
+      return undefined
+    })
+
+  if (!app) {
+    throw new Error('Failed to launch Electron app')
+  }
+
+  page = await app.firstWindow().catch((error) => {
+    console.error('Failed to get first window', error)
+    return undefined
   })
-  await app.start()
 })
 
 afterAll(async () => {
-  if (app.isRunning()) {
-    await app.stop()
+  if (!app) {
+    console.log({ app, page })
+    throw new Error(
+      'Failed to clean up after test: the Electron app is not defined'
+    )
   }
+
+  await app.close()
 })
 
 it('returns false when run in the Electron renderer process', async () => {
-  const body = await app.client.$('body')
-  expect(await body.getText()).toEqual('false')
+  const body = await page!.locator('body').textContent()
+  expect(body!.trim()).toEqual('false')
 })
